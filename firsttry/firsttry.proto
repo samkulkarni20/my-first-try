@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+// The firsttry service definition
+service FirstTry {
+  // Greeting
+  rpc SayHowdy (HowdyRequest) returns (HowdyResponse) {}
+  // Return a random number
+  rpc GetRandomNumber (RandomNoRequest) returns (RandomNoResponse) {}
+}
+
+// The Howdy message containing user's name
+message HowdyRequest {
+  string name = 1;
+}
+
+// The Howdy Response message containing greetings
+message HowdyResponse {
+  string message = 1;
+}
+
+// The Random Number Request message containing base for random number generation
+message RandomNoRequest {
+  int32 base = 1;
+}
+
+// The Random Number Response message containing the random number
+message RandomNoResponse {
+  int32 randomNumber = 1;
+}
